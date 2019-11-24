@@ -12,7 +12,7 @@ class Calculator extends React.Component {
     calculation = () =>
     {
       if(this.state.string==='') return 0;
-      if(this.state.string.slice(-1)!=='+' && this.state.string.slice(-1)!=='-' && this.state.string.slice(-1)!=='*' && this.state.string.slice(-1)!=='/' && this.state.string.slice(-1)!=='%' && this.state.string.slice(-1)!=='(')  
+      if(this.state.string.slice(-1)!=='+' && this.state.string.slice(-1)!=='-' && this.state.string.slice(-1)!=='*' && this.state.string.slice(-1)!=='/' && this.state.string.slice(-1)!=='%' && this.state.string.slice(-1)!=='(' && this.state.string.slice(-1)!=='')  
       {     
         const ans = eval(this.state.string);
         return ans;
@@ -21,7 +21,7 @@ class Calculator extends React.Component {
     }
 
     addToString = (symb) => {
-        if((this.state.string.slice(-1)!=='+' && this.state.string.slice(-1)!=='-' && this.state.string.slice(-1)!=='*' && this.state.string.slice(-1)!=='/' && this.state.string.slice(-1)!=='%' && this.state.string.slice(-1)!=='(') || (symb!=='+' && symb!=='-' && symb!=='*' && symb!=='/' && symb!=='%'))
+        if((this.state.string.slice(-1)!=='+' && this.state.string.slice(-1)!=='-' && this.state.string.slice(-1)!=='*' && this.state.string.slice(-1)!=='/' && this.state.string.slice(-1)!=='%' && this.state.string.slice(-1)!=='(' && this.state.string.slice(-1)!=='') || (symb!=='+' && symb!=='-' && symb!=='*' && symb!=='/' && symb!=='%'))
         {
             if(symb === '×') symb = '*';
             if(symb === '÷') symb = '/';
