@@ -27,6 +27,7 @@ class Calculator extends React.Component {
     }
 
     addToString = (symb) => {
+ 
         if((this.state.string.slice(-1)!=='+' && this.state.string.slice(-1)!=='-' && this.state.string.slice(-1)!=='*' && this.state.string.slice(-1)!=='/' && this.state.string.slice(-1)!=='%' && this.state.string.slice(-1)!=='(' && this.state.string.slice(-1)!=='') || (symb!=='+' && symb!=='-' && symb!=='*' && symb!=='/' && symb!=='%'))
         {
             if(symb === '×') symb = '*';
@@ -37,7 +38,9 @@ class Calculator extends React.Component {
             this.setState({ string: str });
             const ans = this.calculation;
             this.setState({answer: ans});
+            return ans;
         }
+        
     }
 
     reset = () =>
