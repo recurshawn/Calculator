@@ -6,12 +6,12 @@ class Calculator extends React.Component {
 
     state = {
         string: '2+2*2/2',
-        answer: 0
+        answer: 0,
     };
 
     calculation = () =>
     {
-      if(this.state.string.slice(-1)!=='+' && this.state.string.slice(-1)!=='-' && this.state.string.slice(-1)!=='*' && this.state.string.slice(-1)!=='/' && this.state.string.slice(-1)!=='%')  
+      if(this.state.string.slice(-1)!=='+' && this.state.string.slice(-1)!=='-' && this.state.string.slice(-1)!=='*' && this.state.string.slice(-1)!=='/' && this.state.string.slice(-1)!=='%' && this.state.string.slice(-1)!=='(')  
       {     
         const ans = eval(this.state.string);
         return ans;
@@ -20,7 +20,7 @@ class Calculator extends React.Component {
     }
 
     addToString = (symb) => {
-        if((this.state.string.slice(-1)!=='+' && this.state.string.slice(-1)!=='-' && this.state.string.slice(-1)!=='*' && this.state.string.slice(-1)!=='/' && this.state.string.slice(-1)!=='%') || (symb!=='+' && symb!=='-' && symb!=='*' && symb!=='/' && symb!=='%'))
+        if((this.state.string.slice(-1)!=='+' && this.state.string.slice(-1)!=='-' && this.state.string.slice(-1)!=='*' && this.state.string.slice(-1)!=='/' && this.state.string.slice(-1)!=='%' && this.state.string.slice(-1)!=='(') || (symb!=='+' && symb!=='-' && symb!=='*' && symb!=='/' && symb!=='%'))
         {
             if(symb === '×') symb = '*';
             if(symb === '÷') symb = '/';
@@ -33,6 +33,18 @@ class Calculator extends React.Component {
         }
     }
 
+    reset = () =>
+    {
+        this.setState({string: '', answer: 0});
+    }
+
+    backspaceString = () =>
+    {
+        var str = this.state.string;
+        str = str.slice(0, -1);
+        this.setState({string: str});
+        this.setState({answer: this.calculation()});
+    }
     render() {
         return (
             <div>
@@ -40,10 +52,10 @@ class Calculator extends React.Component {
                 <Screen str={this.state.string} calculate = {this.calculation} />
                 <div className="row">
                     <div className="col">
-                    <SymbolButton className="power" value={'AC'} />
+                    <SymbolButton className="power" click ={this.reset} value={'AC'} />
                     </div>
                     <div className="col">
-                    <SymbolButton className="backspace" value={'⌫'} />
+                    <SymbolButton className="backspace" click = {this.backspaceString} value={'⌫'} />
                     </div>
                     <div className="col">
                         <SymbolButton className="operator" click={this.addToString} value={'%'} />
