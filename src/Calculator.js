@@ -47,7 +47,7 @@ class Calculator extends React.Component {
                         <SymbolButton click={this.addToString} value={9} />
                     </div>
                     <div className="col">
-                        <SymbolButton click={this.addToString} value={'/'} />
+                        <SymbolButton click={this.addToString} value={'÷'} />
                     </div>
                 </div>
                 <div className="row">
