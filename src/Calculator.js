@@ -5,7 +5,7 @@ import Screen from './Screen.js';
 class Calculator extends React.Component {
 
     state = {
-        string: '2+2*2/2',
+        string: '',
         answer: 0,
     };
 
