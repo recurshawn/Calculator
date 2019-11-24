@@ -22,8 +22,9 @@ class Calculator extends React.Component {
     addToString = (symb) => {
         if((this.state.string.slice(-1)!=='+' && this.state.string.slice(-1)!=='-' && this.state.string.slice(-1)!=='*' && this.state.string.slice(-1)!=='/' && this.state.string.slice(-1)!=='%') || (symb!=='+' && symb!=='-' && symb!=='*' && symb!=='/' && symb!=='%'))
         {
-            if(symb === 'x') symb = '*';
+            if(symb === '×') symb = '*';
             if(symb === '÷') symb = '/';
+            if(symb === '−') symb = '-';
             let str = this.state.string;
             str = str + symb;
             this.setState({ string: str });
@@ -35,7 +36,22 @@ class Calculator extends React.Component {
     render() {
         return (
             <div>
+                <div className="buttonBoard">
                 <Screen str={this.state.string} calculate = {this.calculation} />
+                <div className="row">
+                    <div className="col">
+                    <SymbolButton className="power" value={'AC'} />
+                    </div>
+                    <div className="col">
+                    <SymbolButton className="backspace" value={'⌫'} />
+                    </div>
+                    <div className="col">
+                        <SymbolButton className="operator" click={this.addToString} value={'%'} />
+                    </div>
+                    <div className="col">
+                        <SymbolButton className="operator" click={this.addToString} value={'÷'} />
+                    </div>
+                </div>
                 <div className="row">
                     <div className="col">
                         <SymbolButton click={this.addToString} value={7} />
@@ -47,7 +63,7 @@ class Calculator extends React.Component {
                         <SymbolButton click={this.addToString} value={9} />
                     </div>
                     <div className="col">
-                        <SymbolButton click={this.addToString} value={'÷'} />
+                        <SymbolButton className="operator" click={this.addToString} value={'×'} />
                     </div>
                 </div>
                 <div className="row">
@@ -61,7 +77,8 @@ class Calculator extends React.Component {
                         <SymbolButton click={this.addToString} value={6} />
                     </div>
                     <div className="col">
-                        <SymbolButton click={this.addToString} value={'x'} />
+                        <SymbolButton className="operator" click={this.addToString} value={'−'} />
+
                     </div>
                 </div>
                 <div className="row">
@@ -75,25 +92,26 @@ class Calculator extends React.Component {
                         <SymbolButton click={this.addToString} value={3} />
                     </div>
                     <div className="col">
-                        <SymbolButton click={this.addToString} value={'-'} />
+                        <SymbolButton className="operator" click={this.addToString} value={'+'} />
 
                     </div>
                 </div>
                 <div className="row">
                     <div className="col">
-                        <SymbolButton click={this.addToString} value={'0'} />
+                        <SymbolButton className="operator" click={this.addToString} value={'('} />
                     </div>
                     <div className="col">
-                        <SymbolButton click={this.addToString} value={'+'} />
-                    </div>
-                    <div className="col">
-                        <SymbolButton click={this.addToString} value={'%'} />
+                    <SymbolButton click={this.addToString} value={'0'} />
                     </div>
                     <div className="col">
                         <SymbolButton click={this.addToString} value={'.'} />
                     </div>
+                    <div className="col">
+                        
+                        <SymbolButton className="operator" click={this.addToString} value={')'} />
+                    </div>
                 </div>
-
+                </div>
             </div>
         );
     }

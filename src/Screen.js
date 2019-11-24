@@ -4,8 +4,9 @@ const Screen = (props) => {
     var val = props.calculate();
     return(
       <div className="Screen">
-        <p>{props.str}</p>
-        <p>{val}</p>
+        <span className="math">{props.str}</span>
+        <br/>
+        = {val}
       </div>
     );
     
