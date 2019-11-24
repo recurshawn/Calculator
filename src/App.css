@@ -7,7 +7,7 @@ button
   color: white;
   font-size: x-large;
   width: 96%;
-  height: 50px;
+  height: 70px;
   background-color: rgba(56, 56, 56, 0);
 }
 
@@ -24,14 +24,14 @@ button:focus
 .Screen
 {
   color: wheat;
-  padding-top: 25px;
+  padding-top: 70px;
   padding-bottom: 5px;
   padding-right: 50px;
   margin: 0px;
   text-align: right;
   background-color: black;
   width: 100%;
-  height: 100px;
+  height: 200px;
   font-size: large;
 }
 
