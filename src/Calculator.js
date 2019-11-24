@@ -14,8 +14,14 @@ class Calculator extends React.Component {
       if(this.state.string==='') return 0;
       if(this.state.string.slice(-1)!=='+' && this.state.string.slice(-1)!=='-' && this.state.string.slice(-1)!=='*' && this.state.string.slice(-1)!=='/' && this.state.string.slice(-1)!=='%' && this.state.string.slice(-1)!=='(' && this.state.string.slice(-1)!=='')  
       {     
-        const ans = eval(this.state.string);
-        return ans;
+         
+        try{
+            return (eval(this.state.string));
+            
+        } catch(e)
+        {
+            return(this.state.answer);
+        }
       }
       return(this.state.answer);
     }
@@ -29,7 +35,7 @@ class Calculator extends React.Component {
             let str = this.state.string;
             str = str + symb;
             this.setState({ string: str });
-            const ans = eval(this.state.string);
+            const ans = this.calculation;
             this.setState({answer: ans});
         }
     }
@@ -50,7 +56,7 @@ class Calculator extends React.Component {
         return (
             <div>
                 <div className="buttonBoard">
-                <Screen str={this.state.string} calculate = {this.calculation} />
+                <Screen str={this.state.string} calculate = {this.calculation} ans = {this.answer} />
                 <div className="row">
                     <div className="col">
                     <SymbolButton className="power" click ={this.reset} value={'AC'} />

@@ -1,7 +1,13 @@
 import React from 'react';
 
 const Screen = (props) => {
-    var val = props.calculate();
+    var val = 0;
+    try{
+         val = props.calculate();
+     } catch(e)
+     {
+        val = this.props.ans;
+     }
     return(
       <div className="Screen">
         <span className="math">{props.str}</span>
