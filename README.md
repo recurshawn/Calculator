@@ -1,3 +1,6 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c507d879-c94d-41a2-872e-8a0bae881f71/deploy-status)](https://app.netlify.com/sites/capstone-calculator/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c507d879-c94d-41a2-872e-8a0bae881f71/deploy-status)](https://capstone-calculator.netlify.com/)
+
 # Calculator App
-A calculator app in ReactJS
+A calculator app made with ReactJS
+
+Hosted on https://capstone-calculator.netlify.com/
