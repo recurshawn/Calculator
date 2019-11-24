@@ -31,9 +31,9 @@ class Calculator extends React.Component {
  
         if((this.state.string.slice(-1)!=='+' && this.state.string.slice(-1)!=='-' && this.state.string.slice(-1)!=='*' && this.state.string.slice(-1)!=='/' && this.state.string.slice(-1)!=='%' && this.state.string.slice(-1)!=='(' && this.state.string.slice(-1)!=='') || (symb!=='+' && symb!=='-' && symb!=='*' && symb!=='/' && symb!=='%'))
         {
-            if(symb === '×') symb = '*';
-            if(symb === '÷') symb = '/';
-            if(symb === '−') symb = '-';
+            // if(symb === '×') symb = '*';
+            // if(symb === '÷') symb = '/';
+            // if(symb === '−') symb = '-';
             let str = this.state.string;
             str = str + symb;
             this.setState({ string: str });
