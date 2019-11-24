@@ -70,3 +70,12 @@ button:focus
   color: white;
   font-size: xx-large;
 }
+
+.Footer
+{
+    background: #075e54;
+    color: white;
+    padding: 10px;
+    margin-top: 100px;
+    text-align: center;
+}
