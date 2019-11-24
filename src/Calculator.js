@@ -11,6 +11,7 @@ class Calculator extends React.Component {
 
     calculation = () =>
     {
+      if(this.state.string==='') return 0;
       if(this.state.string.slice(-1)!=='+' && this.state.string.slice(-1)!=='-' && this.state.string.slice(-1)!=='*' && this.state.string.slice(-1)!=='/' && this.state.string.slice(-1)!=='%' && this.state.string.slice(-1)!=='(')  
       {     
         const ans = eval(this.state.string);

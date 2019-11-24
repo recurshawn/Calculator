@@ -13,10 +13,16 @@ button
 
 button:hover
 {
+  width: 50%;
+  border-radius: 50%;
   background-color: rgb(73, 73, 73);
 
 }
 
+button:focus
+{
+  outline: 0;
+}
 
 .Screen
 {
