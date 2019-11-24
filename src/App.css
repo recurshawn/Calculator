@@ -6,7 +6,7 @@ button
   border: 0px solid white;
   color: white;
   font-size: x-large;
-  width: 96%;
+  width: 100%;
   height: 70px;
   background-color: rgba(56, 56, 56, 0);
 }
@@ -60,6 +60,16 @@ button:focus
 .backspace button{
   color: rgba(255, 153, 0, 0.61);
 }
+
+.equals button{
+  background-color: rgb(212, 193, 16);
+  color: white;
+}
+
+.equals button:hover{
+  background-color: rgb(243, 231, 120);
+}
+
 .buttonBoard
 {
   padding: 0px;

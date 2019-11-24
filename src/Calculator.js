@@ -23,6 +23,7 @@ class Calculator extends React.Component {
             return(this.state.answer);
         }
       }
+      console.log(this.state.answer);
       return(this.state.answer);
     }
 
@@ -36,7 +37,7 @@ class Calculator extends React.Component {
             let str = this.state.string;
             str = str + symb;
             this.setState({ string: str });
-            const ans = this.calculation;
+            const ans = this.calculation();
             this.setState({answer: ans});
             return ans;
         }
@@ -54,6 +55,12 @@ class Calculator extends React.Component {
         str = str.slice(0, -1);
         this.setState({string: str});
         this.setState({answer: this.calculation()});
+    }
+
+    createNewExpression = () =>
+    {
+        const ans = (this.calculation()).toString();
+        this.setState({string: ans});
     }
     render() {
         return (
@@ -129,10 +136,10 @@ class Calculator extends React.Component {
                         <SymbolButton click={this.addToString} value={'.'} />
                     </div>
                     <div className="col">
-                        
                         <SymbolButton className="operator" click={this.addToString} value={')'} />
                     </div>
                 </div>
+                <SymbolButton className="equals" click={this.createNewExpression} value = {'='} />
                 </div>
             </div>
         );

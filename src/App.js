@@ -10,7 +10,7 @@ class App extends Component {
         <div className="container">
           <Calculator />
           <hr/>
-          <p>This calculator app was built by me as a quick hack to practice my ReactJS skills. It is a capstone project undertaken by Nova Semita fellows</p>
+          <p>This calculator app was built by me as a quick hack to practice my ReactJS skills.</p>
           <p>The calculator is a React Component that can be reused later in the future. Can be made embeddable to use within other webpages too.</p>
           
         </div>
