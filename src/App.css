@@ -72,6 +72,7 @@ button:focus
 
 .buttonBoard
 {
+  display: block;
   padding: 0px;
   background-color: rgb(56, 56, 56);
 }
