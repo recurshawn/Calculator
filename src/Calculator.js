@@ -2,17 +2,24 @@ import React from 'react';
 import SymbolButton from './SymbolButton.js';
 import Screen from './Screen.js';
 
+/* TO DO:
+1. MAINTAIN seperate strings for displaying and calculating to improve looks
+2. Fix button width problem to make the app cleaner on desktop and mobile
+*/
+
 class Calculator extends React.Component {
 
     state = {
         string: '',
+        expression: '', //MAINTAIN seperate strings for displaying and calculating to improve looks
         answer: 0,
     };
 
     calculation = () =>
     {
       if(this.state.string==='') return 0;
-      if(this.state.string.slice(-1)!=='+' && this.state.string.slice(-1)!=='-' && this.state.string.slice(-1)!=='*' && this.state.string.slice(-1)!=='/' && this.state.string.slice(-1)!=='%' && this.state.string.slice(-1)!=='(' && this.state.string.slice(-1)!=='')  
+      const last = this.state.string.slice(-1);
+      if(last!=='+' && last!=='-' && last!=='*' && last!=='/' && last!=='%' && last!=='(')  
       {     
          
         try{
