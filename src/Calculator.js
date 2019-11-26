@@ -28,8 +28,8 @@ class Calculator extends React.Component {
     }
 
     addToString = (symb) => {
- 
-        if((this.state.string.slice(-1)!=='+' && this.state.string.slice(-1)!=='-' && this.state.string.slice(-1)!=='*' && this.state.string.slice(-1)!=='/' && this.state.string.slice(-1)!=='%' && this.state.string.slice(-1)!=='(' && this.state.string.slice(-1)!=='') || (symb!=='+' && symb!=='-' && symb!=='*' && symb!=='/' && symb!=='%'))
+        const last = this.state.string.slice(-1);
+        if((last!=='+' && last!=='-' && last!=='*' && last!=='/' && last!=='%' && last!=='(' && last!=='') || (symb!=='+' && symb!=='-' && symb!=='*' && symb!=='/' && symb!=='%'))
         {
             if(symb === '×') symb = '*';
             if(symb === '÷') symb = '/';
